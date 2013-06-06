@@ -13,10 +13,13 @@
 
 	var currentRun, currentModule, currentTest, assertCount;
 
-	// Gets called when a report is generated.
-	QUnit.jUnitReport = function(/* data */) {
-		// Override me!
+	QUnit.jUnitReport = function(data) {
+        	var console = window.console;
+        	if (console) {
+        	        console.log(data.xml);
+        	}
 	};
+
 
 	QUnit.begin(function() {
 		currentRun = {
