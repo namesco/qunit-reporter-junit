@@ -254,7 +254,6 @@
 
 			xmlWriter.start('testsuite', {
 				name: module.name,
-				hostname: 'localhost',
 				tests: module.total,
 				failures: module.failed,
 				errors: 0,
