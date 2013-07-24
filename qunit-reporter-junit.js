@@ -14,10 +14,10 @@
 	var currentRun, currentModule, currentTest, assertCount;
 
 	QUnit.jUnitReport = function(data) {
-        	var console = window.console;
-        	if (console) {
-        	        console.log(data.xml);
-        	}
+			var console = window.console;
+			if (console) {
+					console.log(data.xml);
+			}
 	};
 
 
@@ -253,7 +253,6 @@
 			module = run.modules[m];
 
 			xmlWriter.start('testsuite', {
-				id: m,
 				name: module.name,
 				hostname: 'localhost',
 				tests: module.total,
@@ -268,11 +267,7 @@
 
 				xmlWriter.start('testcase', {
 					name: test.name,
-					tests: test.total,
-					failures: test.failed,
-					errors: 0,
-					time: convertMillisToSeconds(test.time),  // ms → sec
-					timestamp: toISODateString(test.start)
+					time: convertMillisToSeconds(test.time) // ms → sec
 				});
 
 				for (a = 0, aLen = test.failedAssertions.length; a < aLen; a++) {
