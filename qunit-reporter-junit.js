@@ -16,7 +16,11 @@
 	QUnit.jUnitReport = function(data) {
 			var console = window.console;
 			if (console) {
-					console.log(data.xml);
+				// Something weird is going on in the XML writer, so hack it for now.
+				var xml = data.xml;
+				xml = xml.replace(/^<testsuite name="qunit">/, '');
+				xml = xml.replace(/<\/testsuite>$/, '');
+				console.log(xml);
 			}
 	};
 
