@@ -20,7 +20,7 @@
 				var xml = data.xml;
 				xml = xml.replace(/^<testsuite name="qunit">/, '');
 				xml = xml.replace(/<\/testsuite>$/, '');
-				console.log(xml);
+				console.log('<test />\r\n' + xml);
 			}
 	};
 
